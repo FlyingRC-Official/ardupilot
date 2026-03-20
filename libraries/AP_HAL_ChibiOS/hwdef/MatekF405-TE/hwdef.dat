@@ -115,10 +115,9 @@ PC7  USART6_RX USART6 NODMA
 DMA_PRIORITY ADC1 SPI1* SPI2* TIM1* TIM8* TIM3* UART2*
 
 
-# ------------------- IMU ------------------------------
-SPIDEV imu       SPI1  DEVID1  IMU_CS  MODE3  2*MHZ  8*MHZ
-IMU QMI8658      SPI:imu ROTATION_YAW_90
-IMU Invensensev3 SPI:imu ROTATION_YAW_90
+# ------------------- IMU ICM42605 ---------------------
+SPIDEV icm42605  SPI1  DEVID1  IMU_CS  MODE3  2*MHZ  8*MHZ
+IMU Invensensev3 SPI:icm42605 ROTATION_YAW_90
 define HAL_DEFAULT_INS_FAST_SAMPLE 1
 
 
