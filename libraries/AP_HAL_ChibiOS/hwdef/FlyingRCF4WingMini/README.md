@@ -9,7 +9,7 @@ Note that the flight controller draws power from the same external BEC that is u
 ## Features
 
 - STM32F405RGT6 microcontroller
-- ICM42605(for HW_V1 and HW_V3) or ICM42688-P(for HW_V2) IMU 
+- ICM42605(for HW_V1 and HW_V3), ICM42688-P(for HW_V2), or BMI270 IMU 
 - SPL06(for HW_V1) or SPA06(for HW_V2 and HW_V3) barometer
 - No onboard BEC - to minimize size
 - No onboard Memory - to minimize size
