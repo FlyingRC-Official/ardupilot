@@ -153,8 +153,8 @@ define HAL_STORAGE_SIZE 32768
 STORAGE_FLASH_PAGE 14
 
 # spi devices
-SPIDEV icm42688    SPI1 DEVID1 IMU1_CS       MODE3  2*MHZ 16*MHZ   # Clock is 100Mhz so highest clock <= 24Mhz is 100Mhz/8
-SPIDEV icm42688_2  SPI4 DEVID1 IMU3_CS       MODE3  2*MHZ 16*MHZ
+# SPIDEV icm42688    SPI1 DEVID1 IMU1_CS       MODE3  2*MHZ 16*MHZ   # Clock is 100Mhz so highest clock <= 24Mhz is 100Mhz/8
+# SPIDEV icm42688_2  SPI4 DEVID1 IMU3_CS       MODE3  2*MHZ 16*MHZ
 SPIDEV bmi270_2    SPI4 DEVID1 IMU3_CS       MODE3  1*MHZ 10*MHZ
 SPIDEV osd         SPI2 DEVID1 AT7456E_CS    MODE0 10*MHZ 10*MHZ
 
@@ -170,8 +170,8 @@ define HAL_COMPASS_AUTO_ROT_DEFAULT 2
 
 # IMUs are provisionally set to bottom-mounted orientation and should
 # be hardware-verified on a real board.
-IMU Invensensev3 SPI:icm42688 ROTATION_ROLL_270
-IMU Invensensev3 SPI:icm42688_2 ROTATION_ROLL_180
+# IMU Invensensev3 SPI:icm42688 ROTATION_ROLL_270
+# IMU Invensensev3 SPI:icm42688_2 ROTATION_ROLL_180
 IMU BMI270 SPI:bmi270_2 ROTATION_ROLL_270
 define HAL_DEFAULT_INS_FAST_SAMPLE 1
 
