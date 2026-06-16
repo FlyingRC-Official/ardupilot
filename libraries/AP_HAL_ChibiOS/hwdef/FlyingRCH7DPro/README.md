@@ -1,18 +1,15 @@
 # FlyingRC H7D Pro Flight Controller
 
 The FlyingRC H7D Pro is an STM32H743-based FPV flight controller for
-feature-rich multirotor builds. This ArduPilot board support is based on the
-FlyingRC H7D Pro product material and the local ChibiOS hardware definition.
+feature-rich multirotor builds.
 
-Product documentation and firmware links are published on the FlyingRC GitHub
-Pages site:
+Product documentation and wiring references are published on the FlyingRC site:
 
-- https://flyingrc-official.github.io/
-- https://github.com/FlyingRC-Official/ardupilot/tree/add_FlyingRC_H7DPro_target
+- https://flyingrc-official.github.io/product.html?p=h7d-pro
 
 ## Features
 
-- STM32H743 MCU family.
+- STM32H743 microcontroller.
 - Dual ICM42688 IMUs:
   - `icm42688_1` on SPI1, chip select `IMU1_CS` / PC15.
   - `icm42688_2` on SPI4, chip select `IMU3_CS` / PC13.
@@ -31,8 +28,6 @@ Pages site:
 
 ![FlyingRC H7D Pro Back](FlyingRCH7DPro_back.jpg "FlyingRC H7D Pro Back")
 
-![FlyingRC H7D Pro Dimensions](FlyingRCH7DPro_dimension.jpg "FlyingRC H7D Pro Dimensions")
-
 ## Pinout
 
 ![FlyingRC H7D Pro Front Pinout](FlyingRCH7DPro_pinout_front.jpg "FlyingRC H7D Pro Front Pinout")
@@ -44,9 +39,8 @@ Pages site:
 Two ArduPilot targets are provided:
 
 - `FlyingRCH7DPro`: standard target.
-- `FlyingRCH7DPro-bdshot`: bi-directional DShot target, following the
-  MatekH743-bdshot style of keeping the BDShot resource changes in a separate
-  hwdef target.
+- `FlyingRCH7DPro-bdshot`: bi-directional DShot target with the timer and DMA
+  remapping required for BDShot.
 
 The BDShot target reuses the standard `FlyingRCH7DPro` bootloader with:
 
@@ -81,8 +75,7 @@ timer resources are needed for bi-directional DShot.
 ## OSD Support
 
 The FlyingRC H7D Pro supports onboard analog OSD using OSD_TYPE 1
-(AT7456E/MAX7456-compatible driver). The product material also includes digital
-VTX wiring references for HD video setups.
+(AT7456E/MAX7456-compatible driver).
 
 ## PWM Outputs
 
@@ -108,15 +101,6 @@ In the BDShot target, M1/M3/M5/M7 carry the `BIDIR` timer-capture definitions
 needed for the M1-M8 bi-directional DShot motor set. PWM9-PWM12 have DMA
 disabled so that the LED output keeps a usable DMA channel.
 
-## Wiring Reference
-
-Use the product wiring references before connecting the ESC, video transmitter,
-receiver, and LED accessories.
-
-![FlyingRC H7D Pro ESC Wiring](FlyingRCH7DPro_wiring_esc.jpg "FlyingRC H7D Pro ESC Wiring")
-
-![FlyingRC H7D Pro Digital VTX Wiring](FlyingRCH7DPro_wiring_digital_vtx.jpg "FlyingRC H7D Pro Digital VTX Wiring")
-
 ## Battery Monitoring
 
 Default battery monitor settings in the hwdef:
@@ -139,8 +123,8 @@ control:
 PD10 PINIO1 OUTPUT GPIO(81) LOW
 ```
 
-The FlyingRC product material describes this as a switchable onboard 9 V
-VTX/camera BEC controlled through PINIO1/User1.
+The product documentation describes this as a switchable onboard 9 V VTX/camera
+BEC controlled through PINIO1/User1.
 
 ## Compass and IMUs
 

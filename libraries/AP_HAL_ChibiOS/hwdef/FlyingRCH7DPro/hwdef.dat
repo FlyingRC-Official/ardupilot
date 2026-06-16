@@ -170,8 +170,7 @@ define AP_COMPASS_PROBING_ENABLED 1
 define HAL_I2C_INTERNAL_MASK 0
 define HAL_COMPASS_AUTO_ROT_DEFAULT 2
 
-# IMUs are provisionally set to bottom-mounted orientation and should
-# be hardware-verified on a real board.
+# IMU orientations
 IMU Invensensev3 SPI:icm42688_1 ROTATION_YAW_270
 IMU Invensensev3 SPI:icm42688_2 ROTATION_YAW_180
 
