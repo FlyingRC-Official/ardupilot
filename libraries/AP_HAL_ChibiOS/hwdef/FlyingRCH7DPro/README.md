@@ -69,7 +69,6 @@ current hwdef uses this order:
 | SERIAL5 | UART8 | Spare |
 | SERIAL6 | UART4 | Spare |
 | SERIAL7 | USART6 | RC input |
-| SERIAL8 | USB OTG2 | USB OTG2, if used |
 
 ## RC Input
 
